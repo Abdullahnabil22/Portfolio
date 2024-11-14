@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <div className="p-5">
+      <div className="p-5 overflow-x-hidden">
         <Me />
         <Experience />
         <Skills />

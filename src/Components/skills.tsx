@@ -77,7 +77,7 @@ function Skills() {
 
   return (
     <div
-      className="w-full mx-auto flex flex-col gap-8 p-5 m-2.5 bg-white rounded-2xl border-3 border-black relative filter drop-shadow-custom bg-pattern"
+      className="w-full mx-auto flex flex-col gap-8 p-5 m-2.5 bg-white rounded-2xl border-3 border-black relative filter drop-shadow-custom bg-pattern overflow-hidden"
       id="skills"
       ref={ref}
     >

@@ -10,7 +10,7 @@ function Me() {
 
   return (
     <div
-      className="mx-auto w-full flex items-center justify-center gap-8 p-5  bg-white rounded-2xl border-3 border-black relative filter drop-shadow-custom bg-pattern"
+      className="mx-auto w-full flex flex-col md:flex-row items-center justify-center gap-8 p-5 bg-white rounded-2xl border-3 border-black relative filter drop-shadow-custom bg-pattern overflow-hidden"
       ref={ref}
     >
       <motion.div
@@ -35,7 +35,7 @@ function Me() {
       >
         <div style={{ width: 400, height: 400, position: "relative" }}>
           <motion.div
-            className="flip-card-inner"
+            className="flip-card-inner  md:block"
             whileHover={{ rotateY: 180 }}
             transition={{ duration: 0.6 }}
             style={{
@@ -58,7 +58,7 @@ function Me() {
                 alt="me"
                 width={400}
                 height={400}
-                className="cursor-pointer"
+                className="cursor-pointer  w-96 h-96 md:w-full md:h-full mx-auto"
               />
             </div>
             <div
@@ -75,7 +75,7 @@ function Me() {
                 alt="me"
                 width={400}
                 height={400}
-                className="rounded-2xl cursor-pointer"
+                className="rounded-2xl cursor-pointer   w-96 h-96 md:w-full md:h-full mx-auto"
               />
             </div>
           </motion.div>

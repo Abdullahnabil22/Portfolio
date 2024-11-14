@@ -1,6 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Comic Neue", cursive;
+  }
+}
+
 .clip-polygon {
   clip-path: polygon(0% 0%, 100% 2%, 98% 100%, 2% 98%);
 }
@@ -75,4 +84,14 @@
 }
 .swiper-button-next {
   color: black !important;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+#__next {
+  overflow-x: hidden;
+  width: 100%;
 }
