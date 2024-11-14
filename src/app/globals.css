@@ -1,21 +1,78 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.clip-polygon {
+  clip-path: polygon(0% 0%, 100% 2%, 98% 100%, 2% 98%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  scroll-behavior: smooth;
+}
+
+.speech-bubble {
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
+  border-width: 3px;
+  border-style: solid;
+  border-color: black;
+  position: relative;
+}
+
+.comic-speech-bubble {
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.comic-speech-bubble::after,
+.comic-speech-bubble::before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+}
+.comic-speech-bubble::before {
+  border-left: 40px solid black;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  right: -40px;
+  z-index: 1;
+}
+.comic-speech-bubble::after {
+  border-left: 35px solid white;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  right: -35px;
+  z-index: 2;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.swiper-button-prev-effect,
+.swiper-button-next-effect {
+  animation: popIn 0.5s ease-out;
+}
+.swiper-button-prev {
+  color: black !important;
+}
+.swiper-button-next {
+  color: black !important;
 }
