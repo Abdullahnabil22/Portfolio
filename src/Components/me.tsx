@@ -17,7 +17,7 @@ function Me() {
         initial={{ x: -100, opacity: 0 }}
         animate={inView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-white border-3 border-black p-8 relative max-w-[400px] rounded-2xl comic-speech-bubble"
+        className="bg-white border-3 border-black p-8 relative max-w-[400px] rounded-2xl comic-speech-bubble md:mb-0 mb-12"
       >
         <h1 className="text-5xl font-comic m-0">
           Hi, I&apos;m Abdullah Nabil!
