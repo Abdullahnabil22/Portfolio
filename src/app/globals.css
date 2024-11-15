@@ -1,8 +1,127 @@
 @import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Comic Neue", cursive;
+  }
+}
+
+.clip-polygon {
+  clip-path: polygon(0% 0%, 100% 2%, 98% 100%, 2% 98%);
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+.speech-bubble {
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
+  border-width: 3px;
+  border-style: solid;
+  border-color: black;
+  position: relative;
+}
+
+.comic-speech-bubble {
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.comic-speech-bubble::after,
+.comic-speech-bubble::before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+}
+
+@media (max-width: 768px) {
+  .comic-speech-bubble::after,
+  .comic-speech-bubble::before {
+    right: auto;
+    top: auto;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .comic-speech-bubble::before {
+    border-left: 20px solid transparent !important;
+    border-right: 20px solid transparent !important;
+    border-top: 40px solid black !important;
+    bottom: -60px;
+    right: auto;
+  }
+
+  .comic-speech-bubble::after {
+    border-left: 15px solid transparent !important;
+    border-right: 15px solid transparent !important;
+    border-top: 35px solid white !important;
+    bottom: -55px;
+    right: auto;
+  }
+}
+
+.comic-speech-bubble::before {
+  border-left: 40px solid black;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  right: -40px;
+  z-index: 1;
+}
+.comic-speech-bubble::after {
+  border-left: 35px solid white;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  right: -35px;
+  z-index: 2;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.swiper-button-prev-effect,
+.swiper-button-next-effect {
+  animation: popIn 0.5s ease-out;
+}
+.swiper-button-prev {
+  color: black !important;
+}
+.swiper-button-next {
+  color: black !important;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+#__next {
+  overflow-x: hidden;
+  width: 100%;
+}
 
 * {
   margin: 0;
