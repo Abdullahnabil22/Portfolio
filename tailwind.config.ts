@@ -13,7 +13,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        comic: ["Comic Sans MS", "cursive"],
+        comic: ["Comic Neue", "Comic Sans MS", "Comic Sans", "cursive"],
       },
       borderWidth: {
         "3": "3px",

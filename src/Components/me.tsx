@@ -58,7 +58,9 @@ function Me() {
                 alt="me"
                 width={400}
                 height={400}
-                className="cursor-pointer  w-96 h-96 md:w-full md:h-full mx-auto"
+                loading="eager"
+                priority={true}
+                className="cursor-pointer w-96 h-96 md:w-full md:h-full mx-auto"
               />
             </div>
             <div
