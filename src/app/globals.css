@@ -162,3 +162,34 @@ body {
     border-right: 0;
   }
 }
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  border: 3px solid black;
+  border-radius: 8px;
+  margin: 4px;
+  clip-path: polygon(0% 0%, 100% 2%, 98% 100%, 2% 98%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+  border: 3px solid black;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+  clip-path: polygon(2% 2%, 98% 0%, 100% 98%, 0% 100%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f0f0f0;
+  transform: scale(1.05);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: black white;
+}
