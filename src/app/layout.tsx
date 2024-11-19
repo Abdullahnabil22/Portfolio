@@ -20,8 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${comic.variable}`}>
-      <body className="bg-gray-50">{children}</body>
+    <html lang="en" className={`${comic.variable}`} suppressHydrationWarning>
+      <body className="bg-gray-50" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }

@@ -17,6 +17,14 @@ function Experience() {
       id="experience"
     >
       <motion.div
+        initial={{ y: -50, opacity: 0 }}
+        animate={inView1 ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-4xl font-comic text-center mb-8"
+      >
+        My Origin Story
+      </motion.div>
+      <motion.div
         ref={ref1}
         initial={{ x: -100, opacity: 0 }}
         animate={inView1 ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
@@ -28,7 +36,7 @@ function Experience() {
             Full-stack Web Development Using MEARN Track
           </h3>
           <span className="text-xl font-comic text-gray-600">
-            05/2024 – Present
+            05/2024 – 11/2024
           </span>
         </div>
         <p className="text-2xl font-comic text-gray-600 italic">

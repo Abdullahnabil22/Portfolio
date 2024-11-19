@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { MdEmail, MdLocationOn } from "react-icons/md";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
 
 function Contact() {
   const [ref, inView] = useInView({
@@ -52,7 +53,7 @@ function Contact() {
         animate={inView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-5xl font-comic mb-4">Get in Touch!</h2>
+        <h2 className="text-5xl font-comic mb-4">Call me for duty</h2>
         <p className="text-2xl font-comic text-gray-600">
           I&apos;m always open to new opportunities and interesting projects
         </p>
@@ -99,23 +100,41 @@ function Contact() {
       </div>
 
       <motion.div
-        className="text-center mt-12"
+        className="text-center mt-12 p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-gray-200 max-w-2xl mx-auto"
         initial={{ y: 50, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
-        <p className="text-xl font-comic text-gray-600">
-          Prefer to send a message directly?
+        <p className="text-2xl font-comic text-gray-700 mb-6">
+          🚀 Want to see my full journey?
         </p>
-        <button
-          className="mt-4 px-8 py-3 bg-blue-500 text-white rounded-xl font-comic text-xl 
-                     hover:bg-blue-600 transition-colors"
-          onClick={() =>
-            (window.location.href = "mailto:abdullhn.work@gmail.com")
-          }
+        <Link
+          href="/Abdullah Nabil Ibrahim.pdf"
+          download="Abdullah Nabil Ibrahim.pdf"
+          className="group relative inline-flex items-center gap-2 px-8 py-4 
+                     bg-gradient-to-r from-blue-500 to-blue-600 
+                     hover:from-blue-600 hover:to-blue-700
+                     text-white rounded-xl font-comic text-xl
+                     transform hover:scale-105 transition-all duration-300
+                     shadow-lg hover:shadow-blue-300"
         >
-          Send Message
-        </button>
+          <span className="relative">
+            <svg
+              className="w-6 h-6 inline-block mr-2 group-hover:animate-bounce"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+              />
+            </svg>
+            Download Resume
+          </span>
+        </Link>
       </motion.div>
     </div>
   );
